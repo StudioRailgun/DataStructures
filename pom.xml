@@ -4,7 +4,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>io.github.studiorailgun</groupId>
    <artifactId>DataStructures</artifactId>
-   <version>1.0.0</version>
+   <version>1.0.1</version>
    <packaging>jar</packaging>
 
    <name>${project.groupId}:${project.artifactId}</name>
@@ -15,6 +15,7 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <maven.compiler.source>17</maven.compiler.source>
       <maven.compiler.target>17</maven.compiler.target>
+      <junit.version>5.10.3</junit.version>
    </properties>
 
    <licenses>
@@ -36,6 +37,16 @@
          <organizationUrl>https://github.com/StudioRailgun</organizationUrl>
       </developer>
    </developers>
+
+   <dependencies>
+      <!--JUnit-->
+      <!--License: Eclipse Public License-->
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter</artifactId>
+         <version>${junit.version}</version>
+      </dependency>
+   </dependencies>
    
    <build>
       <plugins>

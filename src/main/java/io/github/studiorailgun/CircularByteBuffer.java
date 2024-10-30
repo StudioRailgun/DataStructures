@@ -9,18 +9,35 @@ import java.util.concurrent.Semaphore;
  * <p>
  * When the sizes of the reads are small enough, the buffer will not perform any reallocations.
  * </p>
+ * <p>
+ * The buffer is threadsafe.
+ * </p>
  */
 public class CircularByteBuffer {
     
-    //The array backing this circular byte buffer
+    /**
+     * The array backing this circular byte buffer
+     */
     byte[] backingArray;
-    //the current read position of the buffer in the backing array
+
+    /**
+     * The current read position of the buffer in the backing array
+     */
     int position;
-    //the remaining bytes to read before the read position equals the write position
+
+    /**
+     * The remaining bytes to read before the read position equals the write position
+     */
     int remaining;
-    //the capacity of the backing array
+
+    /**
+     * The capacity of the backing array
+     */
     int capacity;
-    //Lock to make the structure threadsafe
+    
+    /**
+     * Lock to make the structure threadsafe
+     */
     Semaphore lock = new Semaphore(1);
 
     /**
